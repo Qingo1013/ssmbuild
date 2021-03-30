@@ -1,0 +1,10 @@
+1.问题：bean不存在
+步骤：
+1.查看bean是否注入成功 ok
+2.Junit单元测试，看代码能否出来查询结果 ok
+3.问题，一定不再底层，是spring出错了！
+4.springmvc整合成，没调用到service层的bean
+    1.applicationContext.xml没有注入bean
+    2.web.xml中，也绑定过配置文件！
+        发现问题contextConfigLocation配置的是spring-mvc.xml
+        这里面确实没有我们配置的bean
